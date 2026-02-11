@@ -8,7 +8,8 @@ import { Project, AboutMe as TAboutMe } from '@/types/Home';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { getSortedPostsData, PostData } from '@/lib/posts';
-import { useUserSafe } from "@/hooks/useUserSafe";import { useLanguage } from '@/contexts/LanguageContext';
+import { useUserSafe } from "@/hooks/useUserSafe";
+import { useLanguage } from '@/contexts/LanguageContext';
 import { getBusinessSettings, getGeneralSettings } from '@/lib/settings';
 
 import homeData from '../../public/home.json';
@@ -34,8 +35,8 @@ const Home = ({ home, allPostsData, businessSettings, generalSettings }: HomePro
   const { isSignedIn } = useUserSafe();
 
   const metaTitle = language === 'pt'
-    ? 'Guilherme Cirelli — Desenvolvedor Full Stack | Next.js, React, Node.js'
-    : 'Guilherme Cirelli — Full Stack Developer | Next.js, React, Node.js';
+    ? 'Jean Velloso — Desenvolvedor Full Stack | Next.js, React, Node.js'
+    : 'Jean Velloso — Full Stack Developer | Next.js, React, Node.js';
 
   const metaDescription = language === 'pt'
     ? 'Desenvolvedor Full Stack especializado em Next.js, React e Node.js. Criação de aplicações web modernas, responsivas e escaláveis. Veja meu portfólio e entre em contato.'
@@ -46,13 +47,13 @@ const Home = ({ home, allPostsData, businessSettings, generalSettings }: HomePro
     : 'full stack developer, next.js, react, node.js, typescript, web development';
 
   const ogImageAlt = language === 'pt'
-    ? 'Portfolio Guilherme Cirelli - Desenvolvedor Full Stack'
-    : 'Guilherme Cirelli Portfolio - Full Stack Developer';
+    ? 'Portfolio Jean Velloso - Desenvolvedor Full Stack'
+    : 'Jean Velloso Portfolio - Full Stack Developer';
 
   const structuredDataJobTitle = language === 'pt' ? 'Desenvolvedor Full Stack' : 'Full Stack Developer';
   const structuredDataWebsiteDescription = language === 'pt'
-    ? 'Portfólio profissional de Guilherme Cirelli, desenvolvedor Full Stack especializado em Next.js, React e Node.js'
-    : 'Professional portfolio of Guilherme Cirelli, Full Stack developer specialized in Next.js, React and Node.js';
+    ? 'Portfólio profissional de Jean Velloso, desenvolvedor Full Stack especializado em Next.js, React e Node.js'
+    : 'Professional portfolio of Jean Velloso, Full Stack developer specialized in Next.js, React and Node.js';
   const structuredDataLanguage = language === 'pt' ? 'pt-BR' : 'en-US';
 
   return (
@@ -91,7 +92,7 @@ const Home = ({ home, allPostsData, businessSettings, generalSettings }: HomePro
               "@graph": [
                 {
                   "@type": "Person",
-                  "name": "Guilherme Cirelli",
+                  "name": "Jean Velloso",
                   "jobTitle": structuredDataJobTitle,
                   "url": generalSettings.siteUrl,
                   "image": `${generalSettings.siteUrl}/img/perfil.jpeg`,
@@ -108,7 +109,7 @@ const Home = ({ home, allPostsData, businessSettings, generalSettings }: HomePro
                 },
                 {
                   "@type": "WebSite",
-                  "name": "Portfolio Guilherme Cirelli",
+                  "name": "Portfolio Jean Velloso",
                   "url": generalSettings.siteUrl,
                   "description": structuredDataWebsiteDescription,
                   "inLanguage": structuredDataLanguage
