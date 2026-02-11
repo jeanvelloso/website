@@ -59,7 +59,7 @@ const Post = ({ postData }: PostProps) => {
                   img: ImageRenderer,
                   p: ({ node, ...props }) => {
                     // Se o parágrafo contém apenas uma imagem, renderizar como div
-                    if (node.children.length === 1 && node.children[0].type === 'image') {
+                    if (node && node.children && node.children.length === 1 && node.children[0].type === 'image') {
                       return <ImageRenderer {...(node.children[0].props || {})} />;
                     }
                     return <ParagraphRenderer {...props} />;
@@ -102,7 +102,7 @@ const Post = ({ postData }: PostProps) => {
                         img: ImageRenderer,
                         p: ({ node, ...props }) => {
                           // Se o parágrafo contém apenas uma imagem, renderizar como div
-                          if (node.children.length === 1 && node.children[0].type === 'image') {
+                         if (node && node.children && node.children.length === 1 && node.children[0].type === 'image') {
                             return <ImageRenderer {...(node.children[0].props || {})} />; 
                           }
                           return <ParagraphRenderer {...props} />;
