@@ -57,10 +57,13 @@ const Post = ({ postData }: PostProps) => {
                 remarkPlugins={[remarkGfm]}
                 components={{
                   img: ImageRenderer,
-                  p: ({ node, ...props }) => {
+                 p: ({ node, ...props }: any) => {
                     // Se o parágrafo contém apenas uma imagem, renderizar como div
-                    if (node && node.children && node.children.length === 1 && node.children[0].type === 'image') {
-                      return <ImageRenderer {...(node.children[0].props || {})} />;
+                    if (node?.children?.length === 1) {
+                      const child = node.children[0];
+                      if (child?.tagName === 'img') {
+                        return <ImageRenderer {...(child.props || {})} />;
+                      }
                     }
                     return <ParagraphRenderer {...props} />;
                   },
@@ -100,10 +103,13 @@ const Post = ({ postData }: PostProps) => {
                       remarkPlugins={[remarkGfm]}
                       components={{
                         img: ImageRenderer,
-                        p: ({ node, ...props }) => {
+                         p: ({ node, ...props }: any) => {
                           // Se o parágrafo contém apenas uma imagem, renderizar como div
-                         if (node && node.children && node.children.length === 1 && node.children[0].type === 'image') {
-                            return <ImageRenderer {...(node.children[0].props || {})} />; 
+                          if (node?.children?.length === 1) {
+                            const child = node.children[0];
+                            if (child?.tagName === 'img') {
+                              return <ImageRenderer {...(child.props || {})} />; 
+                            }
                           }
                           return <ParagraphRenderer {...props} />;
                         },
