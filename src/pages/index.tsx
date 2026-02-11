@@ -8,8 +8,7 @@ import { Project, AboutMe as TAboutMe } from '@/types/Home';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { getSortedPostsData, PostData } from '@/lib/posts';
-import { useUser } from "@clerk/nextjs";
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useUserSafe } from "@/hooks/useUserSafe";import { useLanguage } from '@/contexts/LanguageContext';
 import { getBusinessSettings, getGeneralSettings } from '@/lib/settings';
 
 import homeData from '../../public/home.json';
@@ -32,7 +31,7 @@ interface HomeProps {
 const Home = ({ home, allPostsData, businessSettings, generalSettings }: HomeProps) => {
   const { aboutMe } = home || { aboutMe: {} as TAboutMe };
   const { t, language } = useLanguage();
-  const { isSignedIn } = useUser(); // Usar o hook useUser
+  const { isSignedIn } = useUserSafe();
 
   const metaTitle = language === 'pt'
     ? 'Guilherme Cirelli — Desenvolvedor Full Stack | Next.js, React, Node.js'
