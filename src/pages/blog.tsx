@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getBusinessSettings, getGeneralSettings } from '@/lib/settings';
 import { PageSection } from '@/components/commons/PageSection';
-import { useUser, SignInButton } from "@clerk/nextjs";
+import { SignInButton } from "@clerk/nextjs";
+   import { useUserSafe } from "@/hooks/useUserSafe";
 
 interface BlogProps {
   businessSettings: any;
@@ -13,7 +14,7 @@ interface BlogProps {
 
 const Blog = ({ businessSettings, generalSettings }: BlogProps) => {
   const { t } = useLanguage();
-  const { isSignedIn, isLoaded } = useUser();
+   const { isSignedIn, isLoaded } = useUserSafe();
 
   // Mostra loading enquanto verifica autenticação
   if (!isLoaded) {
