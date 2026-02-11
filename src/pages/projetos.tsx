@@ -5,8 +5,7 @@ import Image from 'next/image';
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getBusinessSettings, getGeneralSettings } from '@/lib/settings';
-import { useUser } from '@clerk/nextjs';
-import { useRouter } from 'next/router';
+import { useUserSafe } from '@/hooks/useUserSafe';import { useRouter } from 'next/router';
 
 interface ProjetosProps {
   businessSettings: any;
