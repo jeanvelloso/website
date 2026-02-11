@@ -41,7 +41,7 @@ function App({ Component, pageProps }: AppProps) {
     <LanguageProvider>
       <ThemeProvider>
         <GoogleAnalytics />
-        {/* @ts-expect-error */}
+       
         <ClerkProvider 
           publishableKey={PUBLISHABLE_KEY} 
           initialState={pageProps.initialState}
