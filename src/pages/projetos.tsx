@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getBusinessSettings, getGeneralSettings } from '@/lib/settings';
-import { useUserSafe } from '@/hooks/useUserSafe';import { useRouter } from 'next/router';
+import { useUserSafe } from '@/hooks/useUserSafe';
+import { useRouter } from 'next/router';
 
 interface ProjetosProps {
   businessSettings: any;
@@ -100,7 +101,7 @@ const PROJECT_CONFIGS: ProjetoConfig[] = [
 
 const Projetos = ({ businessSettings, generalSettings }: ProjetosProps) => {
   const { t, language } = useLanguage();
-  const { isSignedIn, isLoaded } = useUser();
+  const { isSignedIn, isLoaded } = useUserSafe();
   const router = useRouter();
   
   const projetos: Projeto[] = useMemo(
