@@ -61,7 +61,7 @@ const Post = ({ postData }: PostProps) => {
                     // Se o parágrafo contém apenas uma imagem, renderizar como div
                     if (node?.children?.length === 1) {
                       const child = node.children[0];
-                      if (child?.tagName === 'img') {
+                      if (child && 'tagName' in child && child.tagName === 'img') {
                         return <ImageRenderer {...(child.props || {})} />;
                       }
                     }
@@ -107,7 +107,7 @@ const Post = ({ postData }: PostProps) => {
                           // Se o parágrafo contém apenas uma imagem, renderizar como div
                           if (node?.children?.length === 1) {
                             const child = node.children[0];
-                            if (child?.tagName === 'img') {
+                            if (child && 'tagName' in child && child.tagName === 'img') {
                               return <ImageRenderer {...(child.props || {})} />; 
                             }
                           }

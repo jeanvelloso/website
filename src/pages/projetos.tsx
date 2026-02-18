@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getBusinessSettings, getGeneralSettings } from '@/lib/settings';
-import { useUserSafe } from '@/hooks/useUserSafe';
 import { useRouter } from 'next/router';
+import { useUser } from '@clerk/nextjs';
 
 interface ProjetosProps {
   businessSettings: any;
@@ -99,9 +99,13 @@ const PROJECT_CONFIGS: ProjetoConfig[] = [
   }
 ];
 
-const Projetos = ({ businessSettings, generalSettings }: ProjetosProps) => {
+type ProjetosBaseProps = ProjetosProps & {
+  isSignedIn: boolean;
+  isLoaded: boolean;
+};
+
+const ProjetosBase = ({ businessSettings, generalSettings, isSignedIn, isLoaded }: ProjetosBaseProps) => {
   const { t, language } = useLanguage();
-  const { isSignedIn, isLoaded } = useUserSafe();
   const router = useRouter();
   
   const projetos: Projeto[] = useMemo(
@@ -631,6 +635,34 @@ const Projetos = ({ businessSettings, generalSettings }: ProjetosProps) => {
       </div>
     </>
   );
+};
+
+const ProjetosWithClerk = (props: ProjetosProps) => {
+  const { isSignedIn, isLoaded } = useUser();
+  return (
+    <ProjetosBase
+      {...props}
+      isSignedIn={!!isSignedIn}
+      isLoaded={!!isLoaded}
+    />
+  );
+};
+
+const ProjetosNoClerk = (props: ProjetosProps) => {
+  return (
+    <ProjetosBase
+      {...props}
+      isSignedIn={false}
+      isLoaded={true}
+    />
+  );
+};
+
+const Projetos = (props: ProjetosProps) => {
+  // Se a key do Clerk não existe no build/runtime, o _app.tsx não renderiza <ClerkProvider />.
+  // Nesse cenário, NÃO podemos chamar hooks do Clerk.
+  const hasClerk = !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  return hasClerk ? <ProjetosWithClerk {...props} /> : <ProjetosNoClerk {...props} />;
 };
 
 export const getStaticProps: GetStaticProps<ProjetosProps> = async () => {

@@ -4,17 +4,21 @@ import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getBusinessSettings, getGeneralSettings } from '@/lib/settings';
 import { PageSection } from '@/components/commons/PageSection';
-import { SignInButton } from "@clerk/nextjs";
-   import { useUserSafe } from "@/hooks/useUserSafe";
+import { SignInButton, useUser } from "@clerk/nextjs";
 
 interface BlogProps {
   businessSettings: any;
   generalSettings: any;
 }
 
-const Blog = ({ businessSettings, generalSettings }: BlogProps) => {
+type BlogBaseProps = BlogProps & {
+  isSignedIn: boolean;
+  isLoaded: boolean;
+  hasClerk: boolean;
+};
+
+const BlogBase = ({ businessSettings, generalSettings, isSignedIn, isLoaded, hasClerk }: BlogBaseProps) => {
   const { t } = useLanguage();
-   const { isSignedIn, isLoaded } = useUserSafe();
 
   // Mostra loading enquanto verifica autenticação
   if (!isLoaded) {
@@ -48,11 +52,17 @@ const Blog = ({ businessSettings, generalSettings }: BlogProps) => {
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
               {t('blog.exclusive.message')}
             </p>
-            <SignInButton mode="modal">
-              <button className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl">
-                {t('blog.exclusive.loginButton')}
-              </button>
-            </SignInButton>
+            {hasClerk ? (
+              <SignInButton mode="modal">
+                <button className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl">
+                  {t('blog.exclusive.loginButton')}
+                </button>
+              </SignInButton>
+            ) : (
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Autenticação (Clerk) não configurada neste deploy.
+              </p>
+            )}
           </div>
         </div>
       </>
@@ -133,6 +143,34 @@ const Blog = ({ businessSettings, generalSettings }: BlogProps) => {
       </div>
     </>
   );
+};
+
+const BlogWithClerk = (props: BlogProps) => {
+  const { isSignedIn, isLoaded } = useUser();
+  return (
+    <BlogBase
+      {...props}
+      hasClerk={true}
+      isSignedIn={!!isSignedIn}
+      isLoaded={!!isLoaded}
+    />
+  );
+};
+
+const BlogNoClerk = (props: BlogProps) => {
+  return (
+    <BlogBase
+      {...props}
+      hasClerk={false}
+      isSignedIn={false}
+      isLoaded={true}
+    />
+  );
+};
+
+const Blog = (props: BlogProps) => {
+  const hasClerk = !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  return hasClerk ? <BlogWithClerk {...props} /> : <BlogNoClerk {...props} />;
 };
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
