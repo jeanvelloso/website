@@ -92,7 +92,7 @@ const Sobre = ({ businessSettings, generalSettings }: SobreProps) => {
               <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start">
                 <div className="flex-shrink-0 flex flex-row sm:flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center lg:justify-start w-full lg:w-auto">
                   <Image
-                    src="/img/perfil2.jpeg"
+                    src="/img/rindo.jpeg"
                     alt="Jean Velloso"
                     width={256}
                     height={256}

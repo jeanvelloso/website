@@ -85,7 +85,7 @@ import statsData from '../../../content/data/stats.json';
 {
   "about": {
     "photo": {
-      "url": "/img/perfil2.jpeg",
+      "url": "/img/rindo.jpeg",
       "alt": "Jean Velloso",
       "width": 300,
       "height": 300
