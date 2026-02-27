@@ -36,13 +36,13 @@ export const Menu = ({ isVisible, onClose }: MenuProps) => {
           <Link href="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0 min-w-0">
             <Image
               src="/img/foto perfil.jpeg"
-              alt="Guilherme Cirelli Lopes"
+              alt="Jean Velloso"
               width={40}
               height={40}
               className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover flex-shrink-0"
             />
             <span className="font-bold text-gray-900 dark:text-white text-base sm:text-lg truncate">
-              Guilherme Cirelli
+              Jean Velloso
             </span>
           </Link>
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">

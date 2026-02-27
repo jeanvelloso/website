@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "Guilherme Cirelli",
+  name: "Jean Velloso",
   description: "Desenvolvedor Full Stack especializado em Next.js, React e Node.js. Criação de aplicações web modernas, responsivas e escaláveis.",
-  url: "https://www.guilhermecirelli.com.br",
+  url: "https://www.xxxxxxx.com.br",
   ogImage: "/img/og-image.jpg",
   links: {
-    upwork: "https://www.upwork.com/freelancers/guicirelli?mp_source=share"
+    upwork: "https://www.upwork.com/freelancers/xxxxxx?mp_source=share"
   },
   keywords: [
     "desenvolvedor full stack",
@@ -16,12 +16,12 @@ export const siteConfig = {
     "frontend",
     "backend"
   ],
-  creator: "Guilherme Cirelli",
+  creator: "Jean Velloso",
   themeColor: "#0f172a",
   socialLinks: [
     {
       name: "Upwork",
-      url: "https://www.upwork.com/freelancers/guicirelli?mp_source=share",
+      url: "https://www.upwork.com/freelancers/xxxxxx?mp_source=share",
       icon: "upwork"
     }
   ],

@@ -58,11 +58,11 @@ const PROJECT_CONFIGS: ProjetoConfig[] = [
     slug: "percirelli-store",
     title: "Percirelli Store",
     videoUrl: "https://www.loom.com/embed/a0411ff38e1b414a8f6407def6f63fb6?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true",
-    link: "https://percirelli.netlify.app/",
-    featuresKey: "projects.detail.percirelli.features",
-    technologiesKey: "projects.detail.percirelli.technologies",
+    link: "https://perprofile.netlify.app/",
+    featuresKey: "projects.detail.perprofile.features",
+    technologiesKey: "projects.detail.perprofile.technologies",
     featured: false,
-    thumbnail: "/img/capa percirelli.jpg"
+    thumbnail: "/img/capa perprofile.jpg"
   },
   {
     id: 4,

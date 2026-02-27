@@ -13,7 +13,7 @@ export default function Document() {
         {/* Metatags Open Graph padrão */}
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Guilherme Cirelli" />
+        <meta property="og:site_name" content="Jean Velloso" />
         
         {/* Metatags Twitter padrão */}
         <meta name="twitter:card" content="summary_large_image" />

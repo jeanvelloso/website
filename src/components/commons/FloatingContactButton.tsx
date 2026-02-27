@@ -47,7 +47,7 @@ export const FloatingContactButton = () => {
 
             {/* Upwork */}
             <a
-              href="https://www.upwork.com/freelancers/guicirelli?mp_source=share"
+              href="https://www.upwork.com/freelancers/xxxxxx?mp_source=share"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors border border-gray-200 dark:border-gray-700"

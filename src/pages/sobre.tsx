@@ -93,14 +93,14 @@ const Sobre = ({ businessSettings, generalSettings }: SobreProps) => {
                 <div className="flex-shrink-0 flex flex-row sm:flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center lg:justify-start w-full lg:w-auto">
                   <Image
                     src="/img/perfil2.jpeg"
-                    alt="Guilherme Cirelli Lopes"
+                    alt="Jean Velloso"
                     width={256}
                     height={256}
                     className="w-20 h-20 xs:w-24 xs:h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 rounded-full object-cover shadow-2xl"
                   />
                   <Image
                     src="/img/perfil3.jpeg"
-                    alt="Guilherme Cirelli Lopes working"
+                    alt="Jean Velloso working"
                     width={256}
                     height={256}
                     className="w-20 h-20 xs:w-24 xs:h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 rounded-full object-cover shadow-2xl"

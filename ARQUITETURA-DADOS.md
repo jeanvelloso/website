@@ -39,7 +39,7 @@ content/data/
     },
     "photo": {
       "url": "/img/foto perfil.jpeg",
-      "alt": "Guilherme Cirelli Lopes",
+      "alt": "Jean Velloso",
       "width": 400,
       "height": 400
     }
@@ -86,7 +86,7 @@ import statsData from '../../../content/data/stats.json';
   "about": {
     "photo": {
       "url": "/img/perfil2.jpeg",
-      "alt": "Guilherme Cirelli",
+      "alt": "Jean Velloso",
       "width": 300,
       "height": 300
     },

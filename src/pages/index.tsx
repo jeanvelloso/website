@@ -95,7 +95,7 @@ const Home = ({ home, allPostsData, businessSettings, generalSettings }: HomePro
                   "url": generalSettings.siteUrl,
                   "image": `${generalSettings.siteUrl}/img/perfil.jpeg`,
                   "sameAs": [
-                    "https://www.upwork.com/freelancers/guicirelli?mp_source=share"
+                    "https://www.upwork.com/freelancers/xxxxxx?mp_source=share"
                   ],
                   "knowsAbout": [
                     "Next.js",
