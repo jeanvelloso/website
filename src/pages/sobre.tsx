@@ -99,7 +99,7 @@ const Sobre = ({ businessSettings, generalSettings }: SobreProps) => {
                     className="w-20 h-20 xs:w-24 xs:h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 rounded-full object-cover shadow-2xl"
                   />
                   <Image
-                    src="/img/sentadorindo.jpeg"
+                    src="/img/sentadorindo.jpg"
                     alt="Jean Velloso working"
                     width={256}
                     height={256}
