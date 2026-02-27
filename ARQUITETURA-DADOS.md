@@ -38,7 +38,7 @@ content/data/
       "textKey": "home.hero.experience"
     },
     "photo": {
-      "url": "/img/foto perfil.jpeg",
+      "url": "/img/bracocruzado.jpeg",
       "alt": "Jean Velloso",
       "width": 400,
       "height": 400

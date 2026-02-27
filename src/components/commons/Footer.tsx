@@ -62,7 +62,7 @@ export const Footer = ({ className = "" }: FooterProps) => {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/img/foto perfil.jpeg"
+                src="/img/bracocruzado.jpeg"
                 alt={businessSettings.brandName}
                 width={40}
                 height={40}

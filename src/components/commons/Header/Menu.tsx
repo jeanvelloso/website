@@ -35,7 +35,7 @@ export const Menu = ({ isVisible, onClose }: MenuProps) => {
         <div className="flex justify-between items-center mb-4 sm:mb-5 gap-2">
           <Link href="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0 min-w-0">
             <Image
-              src="/img/foto perfil.jpeg"
+              src="/img/bracocruzado.jpeg"
               alt="Jean Velloso"
               width={40}
               height={40}
