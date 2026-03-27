@@ -46,8 +46,8 @@ export const Header = () => {
       {/* Download Resume Button */}
       <div className="flex items-center">
         <a
-          href="/files/Curriculo 02072025.pdf"
-          download="xxxxxx.pdf"
+          href="/files/Junior TI.pdf"
+          download="currículo2026.pdf"
           className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,51 +66,46 @@ export const Header = () => {
       <nav className="hidden md:flex items-center gap-2 text-md">
         <Link
           href="/"
-          className={`px-4 py-2 rounded-md transition-colors duration-200 ${
-            router.pathname === '/'
+          className={`px-4 py-2 rounded-md transition-colors duration-200 ${router.pathname === '/'
               ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
               : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-          }`}
+            }`}
         >
           {t('navigation.home')}
         </Link>
         <Link
           href="/sobre"
-          className={`px-4 py-2 rounded-md transition-colors duration-200 ${
-            router.pathname === '/sobre'
+          className={`px-4 py-2 rounded-md transition-colors duration-200 ${router.pathname === '/sobre'
               ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
               : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-          }`}
+            }`}
         >
           {t('navigation.about')}
         </Link>
         <Link
           href="/projetos"
-          className={`px-4 py-2 rounded-md transition-colors duration-200 ${
-            router.pathname === '/projetos'
+          className={`px-4 py-2 rounded-md transition-colors duration-200 ${router.pathname === '/projetos'
               ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
               : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-          }`}
+            }`}
         >
           {t('navigation.projects')}
         </Link>
         <Link
           href="/blog"
-          className={`px-4 py-2 rounded-md transition-colors duration-200 ${
-            router.pathname === '/blog'
+          className={`px-4 py-2 rounded-md transition-colors duration-200 ${router.pathname === '/blog'
               ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
               : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-          }`}
+            }`}
         >
           {t('navigation.blog')}
         </Link>
         <Link
           href="/contato"
-          className={`px-4 py-2 rounded-md transition-colors duration-200 ${
-            router.pathname === '/contato'
+          className={`px-4 py-2 rounded-md transition-colors duration-200 ${router.pathname === '/contato'
               ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
               : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-          }`}
+            }`}
         >
           {t('navigation.contact')}
         </Link>
@@ -126,7 +121,7 @@ export const Header = () => {
               <UserButton />
               <CustomSignOutButton />
             </SignedIn>
-           
+
             <SignedOut>
               <CustomSignInButton />
             </SignedOut>
